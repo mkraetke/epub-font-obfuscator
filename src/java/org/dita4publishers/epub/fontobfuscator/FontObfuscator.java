@@ -21,6 +21,8 @@ import java.security.Security;
 
 import org.apache.commons.io.FilenameUtils;
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 /**
  * Application class for applying EPUB3 font obfuscation to font
  * files.
@@ -144,7 +146,7 @@ public class FontObfuscator {
 		 **/
 		try {
 			Security.addProvider(
-					new com.sun.crypto.provider.SunJCE());
+                           new BouncyCastleProvider());
 			MessageDigest sha = MessageDigest.getInstance("SHA-1");
 			String temp = opfUID.trim();
 			sha.update(temp.getBytes("UTF-8"), 0, temp.length());mask.write(sha.digest());

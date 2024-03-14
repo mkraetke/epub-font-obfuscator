@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+  <info organisation="org.apache" module="hello-ivy"/>
+  <dependencies>
+    <dependency org="commons-io" name="commons-io" rev="2.2"/>
+    <dependency org="org.bouncycastle" name="bcprov-ext-jdk16" rev="1.45"/>   
+  </dependencies>
+</ivy-module>
+

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." name="epub-font-obfuscator">
+<project basedir="." name="epub-font-obfuscator" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <available classname="org.apache.ivy.Main" property="ivy.installed"/>  
   
   <tstamp>
   </tstamp>
@@ -22,12 +24,16 @@
   <target name="init">
     <tstamp/>
   </target>
+
+  <target name="resolve" description="Retrieve dependencies with Ivy">
+    <ivy:retrieve/>
+  </target>
   
   <target name="compile" description="Compile the source">
     <mkdir dir="${classes.home}"/>
     <javac compiler="modern"
-      source="1.7"
-      target="1.7"
+      source="1.8"
+      target="1.8"
       srcdir="${srcdir}"
       destdir="${classes.home}">
       <classpath refid="classpath.base"/>
